@@ -1,12 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Sdk Name="SharpGenTools.Sdk" Version="2.0.0-beta.9" />
+
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="SharpGen.Runtime" Version="2.0.0-beta.9" />
-  </ItemGroup>
 
   <ItemGroup>
     <SharpGenMapping Include="Mapping.xml" />

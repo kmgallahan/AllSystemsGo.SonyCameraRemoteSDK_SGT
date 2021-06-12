@@ -13,4 +13,14 @@
   <include file="CrTypes.h" namespace="AllSystemsGo.CRSDK" attach="true" />
   <include file="ICrCameraObjectInfo.h" namespace="AllSystemsGo.CRSDK" attach="true" />
   <include file="IDeviceCallback.h" namespace="AllSystemsGo.CRSDK" attach="true" />
+  <extension>
+    <create class="SonyCamera" visibility="public static" />
+  </extension>
+  <mapping>
+    <remove enum-item="CrBatteryLevel_Fake"/>
+    <remove enum-item="CrShutterSpeed_Nothing"/>
+    <map enum-item="Cr(.+)" name-tmp="$1" />
+    <map enum-item="CrAspectRatio_(.+)" name-tmp="Ratio$1" naming="underscore" />
+    <map function=".*" dll='"SonyCamera.dll"' group="AllSystemsGo.CRSDK.SonyCamera" />
+  </mapping>
 </config>
