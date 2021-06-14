@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Sdk Name="SharpGenTools.Sdk" Version="2.0.0-beta.9" />
 
@@ -6,6 +6,10 @@
     <TargetFramework>net5.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AllSystemsGo.WinUI\AllSystemsGo.WinUI.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <SharpGenMapping Include="Mapping.xml" />

@@ -14,13 +14,28 @@
   <include file="ICrCameraObjectInfo.h" namespace="AllSystemsGo.CRSDK" attach="true" />
   <include file="IDeviceCallback.h" namespace="AllSystemsGo.CRSDK" attach="true" />
   <extension>
-    <create class="SonyCamera" visibility="public static" />
+    <create class="CR_Core" visibility="public static" />
   </extension>
   <mapping>
     <remove enum-item="CrBatteryLevel_Fake"/>
     <remove enum-item="CrShutterSpeed_Nothing"/>
+
     <map enum-item="Cr(.+)" name-tmp="$1" />
     <map enum-item="CrAspectRatio_(.+)" name-tmp="Ratio$1" naming="underscore" />
-    <map function=".*" dll='"SonyCamera.dll"' group="AllSystemsGo.CRSDK.SonyCamera" />
+
+    <map function=".*" dll='"CR_Core.dll"' group="AllSystemsGo.CRSDK.CR_Core" />
+
+    <map interface="IDeviceCallback" callback="true" callback-visibility="public" />
+
+    <map param="Connect::deviceHandle" attribute="out" />
+    <map param="GetDeviceProperties::properties" attribute="out" />
+    <map param="GetDeviceProperties::numOfPropoties" attribute="out" name="numOfProperties" />
+    <map param="GetLiveViewImageInfo::info" attribute="out" />
+    <map param="GetLiveViewProperties::properties" attribute="out" />
+    <map param="GetLiveViewProperties::numOfProperties" attribute="out" />
+    <map param="GetDeviceSetting::value" attribute="out" />
+    <map param="SetDeviceSetting::value" attribute="out" />
+
+    <map enum="DeviceConnectionVersioin" name="DeviceConnectionVersion"/>
   </mapping>
 </config>

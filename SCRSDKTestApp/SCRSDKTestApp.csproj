@@ -9,4 +9,19 @@
     <ProjectReference Include="..\AllSystemsGo.SonyCameraRemoteSDK\AllSystemsGo.SonyCameraRemoteSDK.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="CrAdapter\Cr_PTP_IP.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="CrAdapter\Cr_PTP_USB.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="CrAdapter\libusb-1.0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Cr_Core.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
