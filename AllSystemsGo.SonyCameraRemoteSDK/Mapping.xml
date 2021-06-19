@@ -4,7 +4,11 @@
   <namespace>AllSystemsGo.CRSDK</namespace>
   <depends>SharpGen.Runtime</depends>
   <include-dir override="true">$(THIS_CONFIG_PATH)/CrSDK</include-dir>
-  <include file="CameraRemote_SDK.h" namespace="AllSystemsGo.CRSDK" attach="true" />
+  <include file="CameraRemote_SDK.h" namespace="AllSystemsGo.CRSDK" attach="true">
+    <pre>
+      #define UNICODE 1
+    </pre>
+  </include>
   <include file="CrCommandData.h" namespace="AllSystemsGo.CRSDK" attach="true" />
   <include file="CrDefines.h" namespace="AllSystemsGo.CRSDK" attach="true" />
   <include file="CrDeviceProperty.h" namespace="AllSystemsGo.CRSDK" attach="true" />
@@ -15,6 +19,7 @@
   <include file="IDeviceCallback.h" namespace="AllSystemsGo.CRSDK" attach="true" />
   <extension>
     <create class="CR_Core" visibility="public static" />
+    <!-- <define macro="UNICODE"/> -->
   </extension>
   <mapping>
     <remove enum-item="CrBatteryLevel_Fake"/>

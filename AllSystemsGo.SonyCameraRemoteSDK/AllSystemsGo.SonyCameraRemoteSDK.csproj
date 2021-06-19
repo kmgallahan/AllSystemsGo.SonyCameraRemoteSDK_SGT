@@ -8,11 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AllSystemsGo.WinUI\AllSystemsGo.WinUI.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <SharpGenMapping Include="Mapping.xml" />
+    <!-- <CastXmlArg Include="-D=UNICODE" /> -->
   </ItemGroup>
 
 </Project>
