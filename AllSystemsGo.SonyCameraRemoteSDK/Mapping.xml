@@ -22,6 +22,9 @@
     <!-- <define macro="UNICODE"/> -->
   </extension>
   <mapping>
+    <map enum="CRERROR_ENUM_0" name="CrError" />
+    <map enum="DeviceConnectionVersioin" name="DeviceConnectionVersion"/>
+
     <remove enum-item="CrBatteryLevel_Fake"/>
     <remove enum-item="CrShutterSpeed_Nothing"/>
 
@@ -29,10 +32,26 @@
     <map enum-item="CrAspectRatio_(.+)" name-tmp="Ratio$1" naming="underscore" />
 
     <map function=".*" dll='"CR_Core.dll"' group="AllSystemsGo.CRSDK.CR_Core" />
+    <map function="EnumCameraObjects" type="CRERROR_ENUM_0"/>
+    <map function="EditSDKInfo" type="CRERROR_ENUM_0"/>
+    <map function="Connect" type="CRERROR_ENUM_0"/>
+    <map function="Disconnect" type="CRERROR_ENUM_0"/>
+    <map function="ReleaseDevice" type="CRERROR_ENUM_0"/>
+    <map function="GetDeviceProperties" type="CRERROR_ENUM_0"/>
+    <map function="ReleaseDeviceProperties" type="CRERROR_ENUM_0"/>
+    <map function="SetDeviceProperty" type="CRERROR_ENUM_0"/>
+    <map function="SendCommand" type="CRERROR_ENUM_0"/>
+    <map function="GetLiveViewImage" type="CRERROR_ENUM_0"/>
+    <map function="GetLiveViewImageInfo" type="CRERROR_ENUM_0"/>
+    <map function="GetLiveViewProperties" type="CRERROR_ENUM_0"/>
+    <map function="ReleaseLiveViewProperties" type="CRERROR_ENUM_0"/>
+    <map function="GetDeviceSetting" type="CRERROR_ENUM_0"/>
+    <map function="SetDeviceSetting" type="CRERROR_ENUM_0"/>
+    <map function="SetSaveInfo" type="CRERROR_ENUM_0"/>
 
     <map interface="IDeviceCallback" callback="true" callback-visibility="public" />
 
-    <map param="Connect::deviceHandle" attribute="out" />
+    <map param="Connect::deviceHandle" attribute="inout" />
     <map param="GetDeviceProperties::properties" attribute="out" />
     <map param="GetDeviceProperties::numOfPropoties" attribute="out" name="numOfProperties" />
     <map param="GetLiveViewImageInfo::info" attribute="out" />
@@ -41,6 +60,14 @@
     <map param="GetDeviceSetting::value" attribute="out" />
     <map param="SetDeviceSetting::value" attribute="out" />
 
-    <map enum="DeviceConnectionVersioin" name="DeviceConnectionVersion"/>
+    <map struct="CrFocusFrameInfo" pack="1"/>
+    <map field="CrFocusFrameInfo::xDenominator" name="MaxWidth"/>
+    <map field="CrFocusFrameInfo::yDenominator" name="MaxHeight"/>
+    <map field="CrFocusFrameInfo::xNumerator" name="XPosition"/>
+    <map field="CrFocusFrameInfo::yNumerator" name="YPosition"/>
+    <map field="CrMagPosInfo::xDenominator" name="MaxWidth"/>
+    <map field="CrMagPosInfo::yDenominator" name="MaxHeight"/>
+    <map field="CrMagPosInfo::xNumerator" name="XPosition"/>
+    <map field="CrMagPosInfo::yNumerator" name="YPosition"/>
   </mapping>
 </config>
